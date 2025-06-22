@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Kirill Vasilev - Space Enthusiast & Berkeley MechE/ECE Student</title>
+    <meta name="title" content="Kirill Vasilev - Space Enthusiast & Berkeley MechE/ECE Student">
+    <meta name="description" content="Space enthusiast and Berkeley MechE/ECE '29 student passionate about technology, engineering, and making an impact in space exploration. Experienced in PCB design, robotics, and chess.">
+    <meta name="author" content="Kirill Vasilev">
+    <meta name="keywords" content="Kirill Vasilev, Berkeley Engineering, Space Technology, PCB Design, Robotics, Chess, MechE, ECE, Engineering Student">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kvasilev.tech/">
+    <meta property="og:title" content="Kirill Vasilev - Space Enthusiast & Berkeley MechE/ECE Student">
+    <meta property="og:description" content="Space enthusiast and Berkeley MechE/ECE '29 student passionate about technology, engineering, and making an impact in space exploration. Experienced in PCB design, robotics, and chess.">
+    <meta property="og:image" content="https://kvasilev.tech/assets/logo.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://kvasilev.tech/">
+    <meta property="twitter:title" content="Kirill Vasilev - Space Enthusiast & Berkeley MechE/ECE Student">
+    <meta property="twitter:description" content="Space enthusiast and Berkeley MechE/ECE '29 student passionate about technology, engineering, and making an impact in space exploration. Experienced in PCB design, robotics, and chess.">
+    <meta property="twitter:image" content="https://kvasilev.tech/assets/logo.svg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+    <link rel="icon" type="image/png" href="/assets/logo.svg" />
+    
+    <!-- Preload critical fonts -->
+    <link 
+      rel="preload" 
+      href="/src/assets/fonts/Atkinson-Hyperlegible-Regular.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin="anonymous"
+    />
+    <link 
+      rel="preload" 
+      href="https://fonts.gstatic.com/s/radley/v10/LYjCdGzinEIjCN1NogNAqw.woff2" 
+      as="font" 
+      type="font/woff2" 
+      crossorigin="anonymous"
+    />
+    
+    <!-- Load Google Fonts with display=swap -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Radley:wght@400;700&display=swap" 
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    
+    <!-- Fallback for Google Fonts -->
+    <noscript>
+      <link 
+        href="https://fonts.googleapis.com/css2?family=Radley:wght@400;700&display=swap" 
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <style>
+      body {
+        margin: 0;
+      }
+      /* Only apply background to blog pages */
+      body[data-page="blog"] {
+        background-color: rgb(13, 14, 18);
+      }
+      
+      /* Font loading optimization */
+      .font-loading {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      .fonts-loaded {
+        font-family: 'Atkinson', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+    </style>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://kvasilev.tech/#person",
+        "name": "Kirill Vasilev",
+        "givenName": "Kirill",
+        "familyName": "Vasilev",
+        "url": "https://kvasilev.tech",
+        "sameAs": [
+          "https://www.linkedin.com/in/vasilevkirill/",
+          "https://github.com/kirushavasilev"
+        ],
+        "email": "kvasilev@berkeley.edu",
+        "description": "Space enthusiast and Berkeley MechE/ECE '29 student passionate about technology and engineering",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of California, Berkeley",
+          "department": [
+            "Mechanical Engineering",
+            "Electrical Engineering and Computer Sciences"
+          ]
+        },
+        "knowsAbout": [
+          "Space Technology",
+          "PCB Design",
+          "Robotics",
+          "Chess",
+          "Engineering"
+        ]
+      }
+    </script>
+  </head>
+  <body class="font-loading">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Font loading detection -->
+    <script>
+      if ("fonts" in document) {
+        Promise.all([
+          document.fonts.load("1em Atkinson"),
+          document.fonts.load("1em Radley"),
+        ]).then(() => {
+          document.body.classList.remove("font-loading");
+          document.body.classList.add("fonts-loaded");
+        });
+      }
+    </script>
+  </body>
+</html>
