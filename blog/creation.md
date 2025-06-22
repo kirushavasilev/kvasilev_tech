@@ -1,18 +1,18 @@
 ---
-title: "Blog Draft"
-summary: "I know how to ruin the entirety of the tech world."
+title: "The Creation of My Personal Website"
+summary: "A journey through the design and development of my space-themed personal website and blog."
 date: "2025-01-19"
-draft: true
+draft: false
 tools: ["KiCAD", "Fusion360", "Solidworks", "RaspberryPi", "Soldering", "Arduino", "CriticalThinking", "VPSHosting"]
 ---
 
 > be cooked but keep moving
 
-## Introduction
+## The Vision
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+When I set out to create my personal website, I wanted it to be more than just another portfolio site. I envisioned a space where my engineering journey, technical projects, and thoughts could coexist in a visually engaging way.
 
-## Main Content
+![The initial design concept for my personal website](/assets/blog/new.jpg "Early mockup of the space-themed interface")
 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
@@ -23,8 +23,8 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 ## Code Example
 
 ```javascript
-function helloWorld() {
-  console.log("Hello, World!");
+function useMilanTime() {
+  return dayjs().utc().add(2, 'hour');
 }
 ```
 
