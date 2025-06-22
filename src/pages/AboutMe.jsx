@@ -201,6 +201,7 @@ const AboutMe = () => {
       <Helmet>
         <title>Kirill Vasilev - Space Enthusiast & Berkeley Engineering Student</title>
         <meta name="description" content="Space enthusiast and Berkeley MechE/ECE '29 student passionate about technology, engineering, and making an impact in space exploration." />
+        <meta name="google-site-verification" content="joL3O0O0oewwTtklpO3v4pruLcTkr9qJUSFo31v2a8U" />
         <link rel="canonical" href="https://kvasilev.tech/" />
       </Helmet>
 
