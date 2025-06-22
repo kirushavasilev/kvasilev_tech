@@ -8,17 +8,38 @@ dayjs.extend(utc);
 
 function useMilanTime() {
   const [date, setDate] = React.useState(() => dayjs().utc().add(2, 'hour')); // UTC+2 for Milan time
+  const timeoutRef = React.useRef();
 
   React.useEffect(() => {
-    // Update immediately
-    setDate(dayjs().utc().add(2, 'hour'));
+    // Update immediately to sync with the current minute
+    const now = dayjs().utc().add(2, 'hour');
+    setDate(now);
 
-    // Then update every second
-    const id = setInterval(() => {
+    // Calculate delay until the next minute
+    const msUntilNextMinute = (60 - now.second()) * 1000 - now.millisecond();
+    
+    // Set initial timeout to sync with minute boundary
+    const initialTimeout = setTimeout(() => {
       setDate(dayjs().utc().add(2, 'hour'));
-    }, 1000);
+      
+      // Then update every minute
+      const id = setInterval(() => {
+        setDate(dayjs().utc().add(2, 'hour'));
+      }, 60000); // 60 seconds
+      
+      // Store interval ID for cleanup
+      timeoutRef.current = id;
+    }, msUntilNextMinute);
 
-    return () => clearInterval(id);
+    // Store initial timeout ID for cleanup
+    timeoutRef.current = initialTimeout;
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        clearInterval(timeoutRef.current);
+      }
+    };
   }, []);
 
   return date;
@@ -43,17 +64,23 @@ function Navbar() {
   return (
     <nav className="w-full flex flex-col items-center py-3 px-4 bg-transparent fixed top-0 left-0 z-20">
       <div className="w-full max-w-6xl flex sm:justify-center justify-between items-center relative">
-        <div className="absolute left-0 hidden sm:block">
+        <div className="absolute left-0 hidden sm:block min-w-[200px] h-[24px]">
           <TimeDisplay />
         </div>
         
         <div className="flex gap-3 sm:gap-4 rounded-full bg-space-card border border-space-border px-3 sm:px-4 py-1 shadow items-center">
-          <img 
-            src="/assets/logo.svg" 
-            alt="KV Logo" 
-            className="w-7 sm:w-8 h-7 sm:h-8 mr-1 sm:mr-2"
-            style={{ borderRadius: '50%' }}
-          />
+          <picture>
+            <source srcSet="/assets/logo.webp" type="image/webp" />
+            <img 
+              src="/assets/logo.svg" 
+              alt="KV Logo" 
+              width="32"
+              height="32"
+              className="w-7 sm:w-8 h-7 sm:h-8 mr-1 sm:mr-2 rounded-full"
+              loading="eager"
+              decoding="sync"
+            />
+          </picture>
           <Link
             to="/"
             className={getLinkClass('/')}
@@ -76,7 +103,7 @@ function Navbar() {
           </a>
         </div>
 
-        <div className="sm:hidden">
+        <div className="sm:hidden min-w-[120px] h-[24px] flex justify-end">
           <Tooltip
             content={isSleeping ? "This is Kirill's time. He is somewhere in Europe.. Kirill is likely sleeping.." : "This is Kirill's time. He is somewhere in Europe, probably locked in"}
             className="whitespace-nowrap"

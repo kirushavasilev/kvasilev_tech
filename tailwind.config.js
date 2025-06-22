@@ -4,6 +4,14 @@ export default {
     './index.html',
     './src/**/*.{js,jsx,ts,tsx}',
   ],
+  safelist: [
+    'font-atkinson',
+    'font-palatino',
+    'text-space-accent',
+    'text-white/80',
+    'bg-space-card',
+    'border-space-border'
+  ],
   theme: {
     extend: {
       colors: {
