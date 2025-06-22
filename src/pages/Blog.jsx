@@ -17,11 +17,11 @@ const PostCard = ({ post, index }) => (
       <div className="flex justify-between items-start gap-4">
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-3">
-            <p className="text-xs sm:text-sm text-white/60 font-atkinson">
+            <p className="text-xs sm:text-sm text-white font-atkinson">
               {dayjs(post.date).format('MMM D, YYYY').toUpperCase()}
             </p>
             <span className="text-white/40">•</span>
-            <p className="text-xs sm:text-sm text-white/60 font-atkinson">
+            <p className="text-xs sm:text-sm text-white font-atkinson">
               {post.readTime} read
             </p>
           </div>
@@ -88,46 +88,50 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-space-dark">
-      <div className="flex-grow pt-24 sm:pt-32 pb-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-base sm:text-lg text-white/80 mb-8 font-atkinson"
-          >
-            {loading ? "Loading..." : `Kirill got too excited... He wrote a total of ${posts.length} blog${posts.length !== 1 ? 's' : ''}`}
-          </motion.h1>
-          
-          {loading ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-white/60 font-atkinson text-center py-12"
-            >
-              Loading posts...
-            </motion.div>
-          ) : posts.length === 0 ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-white/60 font-atkinson text-center py-12"
-            >
-              No posts yet. Check back soon!
-            </motion.div>
-          ) : (
-            <div className="space-y-4 sm:space-y-6">
-              {posts.map((post, index) => (
-                <PostCard key={post.slug} post={post} index={index} />
-              ))}
+    <main className="fixed inset-0 overflow-y-auto bg-space-dark">
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-grow pt-24 sm:pt-32 pb-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="max-w-3xl">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-base sm:text-lg text-white/80 mb-8 font-atkinson"
+              >
+                {loading ? "Loading..." : `Kirill got too excited... He wrote a total of ${posts.length} blog${posts.length !== 1 ? 's' : ''}`}
+              </motion.h1>
+              
+              {loading ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-white/60 font-atkinson text-center py-12"
+                >
+                  Loading posts...
+                </motion.div>
+              ) : posts.length === 0 ? (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="text-white/60 font-atkinson text-center py-12"
+                >
+                  No posts yet. Check back soon!
+                </motion.div>
+              ) : (
+                <div className="space-y-4 sm:space-y-6">
+                  {posts.map((post, index) => (
+                    <PostCard key={post.slug} post={post} index={index} />
+                  ))}
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
+        <BlogFooter />
       </div>
-      <BlogFooter />
-    </div>
+    </main>
   );
 };
 
-export default Blog; 
+export default Blog;

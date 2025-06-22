@@ -41,45 +41,47 @@ function Navbar() {
   };
 
   return (
-    <nav className="w-full flex flex-col items-center py-3 px-4 bg-transparent fixed top-0 left-0 z-20">
-      <div className="w-full max-w-6xl flex sm:justify-center justify-between items-center relative">
-        <div className="absolute left-0 hidden sm:block">
+    <nav className="w-full flex flex-col items-center py-3 px-4 bg-transparent fixed top-0 left-0 right-0 z-50">
+      <div className="w-full max-w-6xl mx-auto relative">
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden sm:block">
           <TimeDisplay />
         </div>
         
-        <div className="flex gap-3 sm:gap-4 rounded-full bg-space-card border border-space-border px-3 sm:px-4 py-1 shadow items-center">
-          <img 
-            src="/assets/logo.svg" 
-            alt="KV Logo" 
-            className="w-7 sm:w-8 h-7 sm:h-8 mr-1 sm:mr-2"
-            style={{ borderRadius: '50%' }}
-          />
-          <Link
-            to="/"
-            className={getLinkClass('/')}
-          >
-            About
-          </Link>
-          <Link
-            to="/blog"
-            className={getLinkClass('/blog')}
-          >
-            Blog
-          </Link>
-          <a
-            href="/assets/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold px-2 py-0.5 rounded-full transition-colors duration-200 hover:text-space-accent focus:outline-none text-sm font-palatino text-white/80 whitespace-nowrap"
-          >
-            Resume
-          </a>
+        <div className="flex justify-center">
+          <div className="flex gap-3 sm:gap-4 rounded-full bg-space-card border border-space-border px-3 sm:px-4 py-1 shadow items-center">
+            <img 
+              src="/assets/logo.svg" 
+              alt="KV Logo" 
+              className="w-7 sm:w-8 h-7 sm:h-8 mr-1 sm:mr-2"
+              style={{ borderRadius: '50%' }}
+            />
+            <Link
+              to="/"
+              className={getLinkClass('/')}
+            >
+              About
+            </Link>
+            <Link
+              to="/blog"
+              className={getLinkClass('/blog')}
+            >
+              Blog
+            </Link>
+            <a
+              href="/assets/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold px-2 py-0.5 rounded-full transition-colors duration-200 hover:text-space-accent focus:outline-none text-sm font-palatino text-white/80 whitespace-nowrap"
+            >
+              Resume
+            </a>
+          </div>
         </div>
 
-        <div className="sm:hidden">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 sm:hidden">
           <Tooltip
             content={isSleeping ? "This is Kirill's time. He is somewhere in Europe.. Kirill is likely sleeping.." : "This is Kirill's time. He is somewhere in Europe, probably locked in"}
-            className="whitespace-nowrap"
+            className="whitespace-normal max-w-[200px] text-center"
             tooltipPosition="bottom"
           >
             <p className="text-white flex cursor-help flex-row items-center gap-1.5 text-[15px] sm:text-[16px] font-atkinson">
@@ -102,7 +104,7 @@ function TimeDisplay() {
   return (
     <Tooltip
       content={isSleeping ? "This is Kirill's time. He is somewhere in Europe.. Kirill is likely sleeping.." : "This is Kirill's time. He is somewhere in Europe, probably locked in"}
-      className="whitespace-nowrap"
+      className="whitespace-normal max-w-[200px] text-center"
       tooltipPosition="bottom"
     >
       <p className="text-white flex cursor-help flex-row items-center gap-1.5 text-[15px] sm:text-[16px] font-atkinson">

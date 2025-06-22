@@ -16,7 +16,7 @@ const SocialLink = ({ href, ariaLabel, children }) => (
 );
 
 export const BlogFooter = React.memo(() => (
-  <footer className="w-full flex flex-col items-center justify-center py-8 bg-space-dark">
+  <footer className="w-full flex flex-col items-center justify-center py-4 bg-space-dark">
     <div className="flex items-center justify-center w-full max-w-6xl px-8">
       <motion.div 
         className="flex items-center gap-4 text-xs text-white/60 font-atkinson"

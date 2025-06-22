@@ -32,7 +32,7 @@ const CurrentAge = () => {
     const age = (
       (new Date().getTime() - new Date("2007-09-26T20:25:00Z").getTime()) /
       (365.25 * 24 * 60 * 60 * 1000)
-    ).toFixed(11);
+    ).toFixed(10);
 
     if (ref.current) {
       ref.current.innerText = `Roughly ${213 + msVariation}ms ago (factoring in display rendering, network latency, visual processing delays, and your brain's perceptual lag), \n I was precisely ${age} years old.`
@@ -82,7 +82,7 @@ function useWarpDriveStarfield(ref) {
   useEffect(() => {
     const canvas = ref.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: false });
     let width = window.innerWidth;
     let height = window.innerHeight;
     let centerX = width / 2;
@@ -91,10 +91,12 @@ function useWarpDriveStarfield(ref) {
     const STAR_COUNT = 1000;
     const SPEED = 20; // higher = faster
 
+    // Create stars with pre-calculated properties
     let stars = Array.from({ length: STAR_COUNT }, () => ({
       x: (Math.random() - 0.5) * width * 2,
       y: (Math.random() - 0.5) * height * 2,
       z: Math.random() * width,
+      speed: SPEED * (0.9 + Math.random() * 0.2) // Slight speed variation
     }));
 
     function resize() {
@@ -113,35 +115,37 @@ function useWarpDriveStarfield(ref) {
       ctx.fillRect(0, 0, width, height);
 
       for (let star of stars) {
-        star.z -= SPEED;
+        star.z -= star.speed;
+        
         if (star.z <= 0) {
-          // Reset star to far away
+          star.z = width;
           star.x = (Math.random() - 0.5) * width * 2;
           star.y = (Math.random() - 0.5) * height * 2;
-          star.z = width;
         }
 
         const sx = centerX + (star.x / star.z) * width;
         const sy = centerY + (star.y / star.z) * height;
+        
+        if (sx >= 0 && sx < width && sy >= 0 && sy < height) {
+          const px = centerX + (star.x / (star.z + star.speed)) * width;
+          const py = centerY + (star.y / (star.z + star.speed)) * height;
 
-        const px = centerX + (star.x / (star.z + SPEED)) * width;
-        const py = centerY + (star.y / (star.z + SPEED)) * height;
+          const alpha = 1 - star.z / width;
+          const brightness = Math.min(255, 200 + (1 - star.z / width) * 55);
 
-        const alpha = 1 - star.z / width;
-        const brightness = Math.min(255, 200 + (1 - star.z / width) * 55);
-
-        ctx.beginPath();
-        ctx.moveTo(px, py);
-        ctx.lineTo(sx, sy);
-        ctx.strokeStyle = `rgba(${brightness},${brightness},${brightness},${alpha})`;
-        ctx.lineWidth = 2 * (1 - star.z / width);
-        ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(px, py);
+          ctx.lineTo(sx, sy);
+          ctx.strokeStyle = `rgba(${brightness},${brightness},${brightness},${alpha})`;
+          ctx.lineWidth = 2 * (1 - star.z / width);
+          ctx.stroke();
+        }
       }
 
       requestAnimationFrame(draw);
     }
 
-    draw();
+    requestAnimationFrame(draw);
 
     return () => window.removeEventListener('resize', resize);
   }, [ref]);
