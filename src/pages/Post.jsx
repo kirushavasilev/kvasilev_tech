@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm';
 import dayjs from 'dayjs';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BlogFooter } from '../components/BlogFooter';
+import { BlogImage } from '../components/BlogImage';
 import { calculateReadTime } from '../utils/readTime';
 import { ToolsShowcase } from '../components/ToolIcon';
 
@@ -151,7 +152,14 @@ const Post = () => {
                   transition={{ duration: 0.5, delay: 0.6 }}
                   className="prose prose-invert prose-sm sm:prose-lg max-w-none"
                 >
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  <ReactMarkdown 
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({ node, src, alt, title }) => (
+                        <BlogImage src={src} alt={alt} title={title} />
+                      ),
+                    }}
+                  >
                     {post.content}
                   </ReactMarkdown>
                 </motion.div>
