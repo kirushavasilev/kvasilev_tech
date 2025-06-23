@@ -2,7 +2,7 @@
 title: "The Creation of My Personal Website"
 summary: "A journey through the design and development of my space-themed personal website and blog."
 date: "2025-01-19"
-draft: false
+draft: true
 tools: ["KiCAD", "Fusion360", "Solidworks", "RaspberryPi", "Soldering", "Arduino", "CriticalThinking", "VPSHosting"]
 ---
 
