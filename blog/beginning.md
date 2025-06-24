@@ -1,8 +1,9 @@
 ---
 title: "The Beginning"
 summary: "The second part of your life starts once you realise you only have one?"
-date: "2025-06-22"
+date: "Jun 22, 2025"
 draft: false
+tools: []
 ---
 
 Well, website built. Fuck CMS, fullstack development definitely wins everytime, especially with hybrid dev nowadays.  
@@ -15,4 +16,4 @@ Every person has ideas worth pursuing.
 Occupy Titan.
 
 
-KV
+KV IOS test
