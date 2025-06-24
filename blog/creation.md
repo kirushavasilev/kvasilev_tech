@@ -1,9 +1,9 @@
 ---
 title: "The Creation of My Personal Website"
 summary: "A journey through the design and development of my space-themed personal website and blog."
-date: "2025-01-19"
-draft: true
-tools: ["KiCAD", "Fusion360", "Solidworks", "RaspberryPi", "Soldering", "Arduino", "CriticalThinking", "VPSHosting"]
+date: "Jan 19, 2025"
+draft: false
+tools: ["KiCAD", "Fusion360", "Solidworks", "RaspberryPi", "Soldering", "Arduino"]
 ---
 
 > be cooked but keep moving
@@ -34,4 +34,4 @@ This is where you would wrap up your blog post with final thoughts and conclusio
 
 ---
 
-*Published on January 15, 2024* 
+*Published on January 15, 2024*
