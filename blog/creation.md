@@ -1,8 +1,8 @@
 ---
-title: "Layout example"
-summary: "Basically all the functionality of MARKDOWN"
+title: "Layout template"
+summary: "Basically all the functionality of md files"
 date: "June 20, 2025"
-draft: true
+draft: false
 tools: []
 ---
 
