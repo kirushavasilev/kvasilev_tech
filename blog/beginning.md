@@ -2,7 +2,7 @@
 title: "The Beginning"
 summary: "of the end"
 date: "Jun 22, 2025"
-draft: false
+draft: true
 tools: []
 ---
 
