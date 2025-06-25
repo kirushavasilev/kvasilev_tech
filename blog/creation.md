@@ -2,8 +2,8 @@
 title: "Layout template"
 summary: "Basically all the functionality of md files"
 date: "June 20, 2025"
-draft: false
-tools: []
+draft: true
+tools: ["KiCAD", "Fusion360", "Solidworks", "RaspberryPi", "Soldering", "Arduino", "CriticalThinking", "VPSHosting"]
 ---
 
 > be cooked but keep moving
