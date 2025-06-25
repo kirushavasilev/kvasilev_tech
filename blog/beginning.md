@@ -1,8 +1,8 @@
 ---
-title: "Second Start"
-summary: "take off"
-date: "Jun 15, 2025"
-draft: true
+title: "The Beginning"
+summary: "Second life starts once you realise you only have one?"
+date: "Jun 20, 2025"
+draft: false
 tools: []
 ---
 
@@ -16,4 +16,4 @@ Every person has ideas worth pursuing.
 Occupy Titan.
 
 
-KV, Your beloved KV
+KV, cap
