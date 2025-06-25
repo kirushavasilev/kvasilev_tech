@@ -1,8 +1,8 @@
 ---
-title: "Example Post"
-summary: "A journey through the design and development of my space-themed personal website and blog and ios test"
-date: "June 15, 2025"
-draft: false
+title: "Layout example"
+summary: "Basically all the functionality of MARKDOWN"
+date: "June 20, 2025"
+draft: true
 tools: []
 ---
 
