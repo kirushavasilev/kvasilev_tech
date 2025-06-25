@@ -1,8 +1,8 @@
 ---
-title: "The Beginning"
-summary: "of the end"
+title: "Second Start"
+summary: "take off"
 date: "Jun 15, 2025"
-draft: false
+draft: true
 tools: []
 ---
 
@@ -16,4 +16,4 @@ Every person has ideas worth pursuing.
 Occupy Titan.
 
 
-KV
+KV, Your beloved KV
