@@ -1,6 +1,6 @@
 ---
 title: "The Beginning"
-summary: "The second part of your life starts once you realise you only have one?"
+summary: "of the end"
 date: "Jun 22, 2025"
 draft: false
 tools: []
