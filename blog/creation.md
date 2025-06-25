@@ -1,8 +1,8 @@
 ---
-title: "The Creation of My Personal Website"
+title: "Example Post"
 summary: "A journey through the design and development of my space-themed personal website and blog and ios test"
 date: "June 15, 2025"
-draft: true
+draft: false
 tools: ["KiCAD", "Fusion360", "Solidworks", "RaspberryPi", "Soldering", "Arduino"]
 ---
 
