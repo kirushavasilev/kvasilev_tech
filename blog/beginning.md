@@ -1,8 +1,8 @@
 ---
 title: "The Beginning"
 summary: "of the end"
-date: "Jun 22, 2025"
-draft: true
+date: "Jun 15, 2025"
+draft: false
 tools: []
 ---
 
@@ -11,9 +11,9 @@ I have a couple of things I wanted to blog here. Will do that shortly.
 
 Thank you readers,  
 Get in touch with me.  
-Every person has ideas worth pursuing.
+Every person has ideas worth pursuing.  
 
 Occupy Titan.
 
 
-KV IOS test
+KV
