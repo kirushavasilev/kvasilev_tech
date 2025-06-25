@@ -8,4 +8,7 @@ tools: ["Soldering"]
 
 **Lol!**
 
+What bout this? 
+Good job hybrid
+
 ![Image](/assets/blog/uploaded_image_FBFA2AC6.jpg)
