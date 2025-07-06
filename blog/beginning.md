@@ -2,7 +2,7 @@
 title: "The Beginning"
 summary: "Second life starts once you realise you only have one?"
 date: "Jun 20, 2025"
-draft: false
+draft: true
 tools: []
 ---
 
