@@ -235,7 +235,7 @@ const AboutMe = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              Kirill Vasilev - Space Enthusiast and Berkeley Engineering Student
+              Kirill Vasilev
             </motion.h1>
             
             <motion.p
