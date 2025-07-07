@@ -244,7 +244,7 @@ const AboutMe = () => {
               transition={{ delay: 0.5, duration: 0.4 }}
               className="text-[13px] sm:text-base"
             >
-              Hey! I'm <span className="font-bold text-space-accent">Kirill Vasilev</span> — a <span className="font-bold text-space-accent">space enthusiast</span> driven to make an impact in the world of tech.
+              Hey! I'm <span className="font-bold text-space-accent">Kirill Vasilev</span> — a <span className="font-bold text-space-accent">space enthusiast</span> driven to make an impact in the future world of tech.
             </motion.p>
 
             <motion.p
@@ -253,7 +253,7 @@ const AboutMe = () => {
               transition={{ delay: 0.6, duration: 0.4 }}
               className="text-[13px] sm:text-base"
             >
-              <span className="font-bold text-space-accent">Berkeley MechE / ECE '29</span>
+              <span className="font-bold text-space-accent">Berkeley MechE / ECE / Physics '29</span>
             </motion.p>
 
             <motion.ul 
@@ -263,9 +263,9 @@ const AboutMe = () => {
               transition={{ delay: 0.7, duration: 0.4 }}
               aria-label="Key interests and activities"
             >
-              <li><span className="font-bold text-space-accent">Long time chess addict</span> currently making a comeback on a road to title</li>
-              <li>Physics <span className="font-bold text-space-accent">lover</span></li>
-              <li><span className="font-bold text-space-accent">Currently soldering the PCBs</span> for my latest and biggest project</li>
+              <li><span className="font-bold text-space-accent"></span> On a road to a chess title</li>
+              <li>Failed <span className="font-bold text-space-accent">physics prodigy</span></li>
+             
             </motion.ul>
 
             <motion.p
